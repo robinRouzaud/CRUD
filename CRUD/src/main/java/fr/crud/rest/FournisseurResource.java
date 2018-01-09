@@ -19,7 +19,7 @@ public class FournisseurResource {
 	@Autowired
 	private IFournisseurService fournisseurService;
 	
-	@RequestMapping(value = "/fournisseurs", method = RequestMethod.POST, produces="application.json")
+	@RequestMapping(value = "/fournisseurs", method = RequestMethod.POST, produces="application/json")
 	public Fournisseur ajouterFournisseur(@RequestBody Fournisseur fournisseur) {
 		Fournisseur f = fournisseurService.createFournisseur(fournisseur);
 		return f;
