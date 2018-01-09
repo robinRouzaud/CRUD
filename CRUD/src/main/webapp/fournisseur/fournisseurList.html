@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">
+		<span class="lead">Liste des Fournisseurs </span>
+	</div>
+	<div class="tablecontainer">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+
+					<th>Nom</th>
+					<th>Produits</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="p in vm.fournisseurs">
+					<td>{{p.nom}}</td>
+					<td>
+						<table>
+							<thead>
+								<tr>
+									<th>Desigantion</th>
+									<th>Prix</th>
+									<th>Quantité</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="p1 in p.produits">
+									<td>{{p1.designation}}</td>
+									<td>{{p1.prix}}</td>
+									<td>{{p1.quantite}}</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</td>
+					<!--                      <td> -->
+					<!--                      <button type="button" ng-click="vm.edit(p)" class="btn btn-success custom-width">Edit</button>   -->
+					<!--                      <button type="button" ng-click="vm.remove(p.id)" class="btn btn-danger custom-width">Remove</button> -->
+					<!--                      </td> -->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

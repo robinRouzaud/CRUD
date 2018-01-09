@@ -1,0 +1,78 @@
+<form ng-submit="vm.submit()" name="myForm" class="form-horizontal">
+	<input type="hidden" ng-model="vm.produit.id" />
+	<div class="row">
+		<div class="form-group col-md-12">
+			<label class="col-md-2 control-lable" for="designation">Designation</label>
+			<div class="col-md-7">
+				<input type="text" ng-model="vm.produit.designation"
+					id="designation" class="username form-control input-sm"
+					placeholder="Saisir la designation" required ng-minlength="3" />
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="form-group col-md-12">
+			<label class="col-md-2 control-lable" for="prix">Prix</label>
+			<div class="col-md-7">
+				<input type="text" ng-model="vm.produit.prix" id="prix"
+					class="form-control input-sm" placeholder="Saisir le Prix" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-group col-md-12">
+			<label class="col-md-2 control-lable" for="quantite">Quantité</label>
+			<div class="col-md-7">
+				<input type="text" ng-model="vm.produit.quantite" id="quantite"
+					class="form-control input-sm" placeholder="Saisir la Quatité" />
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-actions floatRight">
+			<input type="submit" value="{{!vm.produit.id ? 'Add' : 'Update'}}"
+				class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+			<button type="button" ng-click="vm.reset()"
+				class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset
+				Form</button>
+		</div>
+	</div>
+</form>
+<h1>{{test}}</h1>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">
+		<span class="lead">Liste des produits </span>
+	</div>
+	<div class="tablecontainer">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID.</th>
+					<th>Designation</th>
+					<th>Prix</th>
+					<th>Quantité</th>
+                    <th width="20%">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="p in vm.produits">
+					<td>{{p.id}}</td>
+					<td>{{p.designation}}</td>
+					<td>{{p.prix}}</td>
+					<td>{{p.quantite}}</td>
+                     <td>
+                     <button type="button" ng-click="vm.edit(p)" class="btn btn-success custom-width">Edit</button>  
+                     <button type="button" ng-click="vm.remove(p.id)" class="btn btn-danger custom-width">Remove</button>
+                     </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
