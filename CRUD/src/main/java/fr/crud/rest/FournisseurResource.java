@@ -25,13 +25,15 @@ public class FournisseurResource {
 		return f;
 	}
 	
-	@RequestMapping(value="/fournisseur", method=RequestMethod.GET)
+	@RequestMapping(value="/fournisseurs", method=RequestMethod.GET)
 	public List<Fournisseur> getFournisseur() {
 		return fournisseurService.getAllFournisseur();
 	}
 	
-	@RequestMapping(value="/fournisseur/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/fournisseurs/{id}", method=RequestMethod.DELETE)
 	public void deleteFournisseur(@PathVariable("id") Long id) {
 		fournisseurService.deleteFournisseur(id);
 	}
+	
+	
 }

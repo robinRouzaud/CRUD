@@ -1,7 +1,4 @@
-/**
- * 
- */
-	'use strict';
+'use strict';
 	angular
 		.module('crudApp')
 		.config(stateConfig);

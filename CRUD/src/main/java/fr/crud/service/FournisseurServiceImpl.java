@@ -28,6 +28,4 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	public void deleteFournisseur(Long id) {
 		dao.delete(id);
 	}
-
-	
 }
