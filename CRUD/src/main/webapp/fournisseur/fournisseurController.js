@@ -1,6 +1,20 @@
 (function() {
+	'use strict'
 	
-	var module = angular.module('crudApp', []);
+	angular.module('crudApp', []).controller('FournisseurCtrl', FournisseurCtrl);
 	
-	module.controller('FournisseurCtrl', []);
+	FournisseurCtrl.$inject = ['$scope', 'FournisseurSerice'];
+	
+	function FournisseurCtrl ($scope, FournisseurService) {
+		var vm = this;
+		vm.fournisseurs = [];
+		
+		getAll();
+		function getAll() {
+			vm.fournisseurs = FournisseursService.query
+			FournisseurService.query(function(result) {
+				vm.fournisseurs = result;
+			})
+		}
+	}
 })
